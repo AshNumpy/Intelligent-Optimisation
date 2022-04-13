@@ -34,7 +34,6 @@ while(stat <= 9):
     for i in range(0,3):
         index.append(rn.randint(0,5))
 
-
     # set neighbors index are different each other:
     itr=0
     while(itr==0):
@@ -44,8 +43,6 @@ while(stat <= 9):
                 itr = 0
             else:
                 itr = 1
-
-
 
     # find the best neighbor:
     for i in index:
