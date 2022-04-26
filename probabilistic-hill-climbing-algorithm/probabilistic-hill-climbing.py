@@ -1,18 +1,19 @@
 import random
 import pandas as pd
 import math 
+from datetime import datetime
+start_time = datetime.now()
 
-x = round(random.uniform(0,10),2)
-y = round(random.uniform(0,10),2)
+x = 0
+y = 0
 pivot = [x,y]
 delta = 0.01
 z = math.sin(x) + math.tan(y) + 1.25**(x+y)
-
-print("Pivot point: ",pivot)
-print("-"*40)
+z_copy = z
+pivot_copy = pivot
 
 itr = 0
-while itr < 5:
+while itr < 999:
     cond1 = (pivot[0]>=0) & (pivot[0]<=10)
     cond2 = (pivot[1]>=0) & (pivot[1]<=10) 
     if cond1 == cond2:  # Starting conditions 
@@ -111,3 +112,11 @@ while itr < 5:
     else:
         print("Out of range! (x or y is not in [0;10] range)")
         break
+
+print("*"*50)
+print(f"End of the {itr+1} times tests: ")
+print(f"Starting pivot point: {pivot_copy} \t Pivots value: {z_copy}")
+print(f"Last pivot point: {pivot} \t last pivots value: {maxZ}")
+
+end_time = datetime.now()
+print('\nHesaplama süresi: {}'.format(end_time - start_time))
